@@ -55,4 +55,10 @@ def video_frame_callback(frame: av.VideoFrame):
 st.title("Age & Gender Detection AI")
 st.write("Click 'START' to use your webcam and detect age and gender.")
 
-webrtc_streamer(key="age-gender-detector", video_frame_callback=video_frame_callback)
+webrtc_streamer(
+    key="age-gender-detector", 
+    video_frame_callback=video_frame_callback,
+    rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    }
+)
