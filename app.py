@@ -59,6 +59,12 @@ webrtc_streamer(
     key="age-gender-detector", 
     video_frame_callback=video_frame_callback,
     rtc_configuration={
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        "iceServers": [
+            {"urls": ["stun:stun.l.google.com:19302"]},
+            {"urls": ["stun:stun1.l.google.com:19302"]},
+            {"urls": ["stun:stun2.l.google.com:19302"]},
+            {"urls": ["stun:stun.services.mozilla.com"]},
+            {"urls": ["stun:global.stun.twilio.com:3478"]}
+        ]
     }
 )
